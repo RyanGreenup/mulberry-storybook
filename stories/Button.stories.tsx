@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "storybook-solidjs-vite";
 import { Button } from "../src/mulberry";
 
-
 const meta = {
   title: "Components/Button",
   component: Button,
@@ -12,7 +11,19 @@ const meta = {
   argTypes: {
     variant: {
       control: { type: "select" },
-      options: ["primary", "secondary", "accent", "neutral", "info", "success", "warning", "error", "ghost", "outline", "link"],
+      options: [
+        "primary",
+        "secondary",
+        "accent",
+        "neutral",
+        "info",
+        "success",
+        "warning",
+        "error",
+        "ghost",
+        "outline",
+        "link",
+      ],
       description: "Button variant/style",
     },
     size: {
@@ -43,10 +54,10 @@ export const Default: Story = {
   parameters: {
     docs: {
       source: {
-        code: '<Button>Button</Button>'
-      }
-    }
-  }
+        code: "<Button>Button</Button>",
+      },
+    },
+  },
 };
 
 export const WithArgs: Story = {
@@ -214,9 +225,15 @@ export const States: Story = {
         <h3 style={{ margin: "0", "font-size": "1rem", "font-weight": "600" }}>
           Disabled
         </h3>
-        <Button variant="primary" disabled>Disabled</Button>
-        <Button variant="secondary" disabled>Disabled</Button>
-        <Button variant="outline" disabled>Disabled</Button>
+        <Button variant="primary" disabled>
+          Disabled
+        </Button>
+        <Button variant="secondary" disabled>
+          Disabled
+        </Button>
+        <Button variant="outline" disabled>
+          Disabled
+        </Button>
       </div>
     </div>
   ),
@@ -279,10 +296,7 @@ export const Interactive: Story = {
           Click Me
         </Button>
 
-        <Button
-          variant="success"
-          onClick={() => alert("Success!")}
-        >
+        <Button variant="success" onClick={() => alert("Success!")}>
           Save Changes
         </Button>
 
