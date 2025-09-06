@@ -1,8 +1,16 @@
 import { defineConfig } from "@pandacss/dev";
+import pandaPreset from "@pandacss/preset-panda";
+import { DaisyPreset } from "./src/mulberry/presets/daisy/daisy";
+import layoutPreset from "./src/mulberry/presets/layout/layout";
 
 export default defineConfig({
   // Whether to use css reset
   preflight: true,
+
+  presets: [pandaPreset, DaisyPreset, layoutPreset],
+
+  // Enable JSX generation
+  jsxFramework: "solid",
 
   // Where to look for your css declarations
   include: [
@@ -19,6 +27,7 @@ export default defineConfig({
     extend: {},
   },
 
+  outExtension: "js",
   // The output directory for your css system
   outdir: "styled-system",
 });

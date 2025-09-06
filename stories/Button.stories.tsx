@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "storybook-solidjs-vite";
 import { css } from "../styled-system/css";
 
-import { Button } from "./Button";
+import { Button } from "../src/mulberry";
 
 const meta = {
   title: "Example/Button",

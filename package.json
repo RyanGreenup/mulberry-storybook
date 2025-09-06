@@ -1,11 +1,16 @@
 {
-  "name": "/home/ryan/Sync/Projects/solid-js/panda/submodule_approach/mulberry-components",
+  "name": "mulberry-storybook",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepare": "panda codegen",
+    "prepare-clean": "panda codegen --clean"
   },
+  "workspaces": [
+    "./src/mulberry"
+  ],
   "devDependencies": {
     "@chromatic-com/storybook": "^4.1.1",
     "@pandacss/dev": "^1.2.0",
