@@ -1,7 +1,7 @@
 import { mergeProps } from "solid-js";
 
-import { Button } from "./Button";
-import "./header.css";
+import { css } from "../styled-system/css";
+import { Button } from "../src/mulberry";
 
 export interface HeaderProps {
   user?: { name: string } | undefined;
@@ -15,9 +15,28 @@ export const Header = (_props: HeaderProps) => {
   const props = mergeProps({ user: undefined }, _props);
 
   return (
-    <header>
-      <div class="storybook-header">
-        <div>
+    <header
+      class={css({
+        bg: "base.200",
+        shadow: "md",
+        border: "default",
+      })}
+    >
+      <div
+        class={css({
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          borderBottom: "default",
+          padding: "15px 20px",
+        })}
+      >
+        <div
+          class={css({
+            display: "inline-block",
+            verticalAlign: "top",
+          })}
+        >
           <svg
             width="32"
             height="32"
@@ -39,25 +58,53 @@ export const Header = (_props: HeaderProps) => {
               />
             </g>
           </svg>
-          <h1>Acme</h1>
+          <h1
+            class={css({
+              display: "inline-block",
+              verticalAlign: "top",
+            })}
+          >
+            Acme
+          </h1>
         </div>
         <div>
           {props.user ? (
             <>
-              <span class="welcome">
+              <span
+                class={css({
+                  mr: "10px",
+                  color: "base.content",
+                })}
+              >
                 Welcome, <b>{props.user.name}</b>!
               </span>
-              <Button size="small" onClick={props.onLogout} label="Log out" />
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={props.onLogout}
+                class={css({ ml: "10px" })}
+              >
+                Log Out
+              </Button>
             </>
           ) : (
             <>
-              <Button size="small" onClick={props.onLogin} label="Log in" />
               <Button
-                primary
-                size="small"
+                size="sm"
+                onClick={props.onLogin}
+                class={css({ ml: "10px" })}
+                variant="ghost"
+              >
+                Sign In
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
                 onClick={props.onCreateAccount}
-                label="Sign up"
-              />
+                class={css({ ml: "10px" })}
+              >
+                Sign Up
+              </Button>
             </>
           )}
         </div>
