@@ -151,13 +151,12 @@ export const SidebarContainer = ({ children }: { children: any }) => (
   </div>
 );
 
-import { BtmDashContainer } from "../../src/components/Layout";
+import { BtmDashContainer, DrawerToggleStyled } from "../../src/mulberry";
 import {
-  DrawerToggleStyled,
   NavbarToggleStyled,
   RightDrawerToggleStyled,
   BtmDrawerToggleStyled,
-} from "../../src/components/Layout/styled";
+} from "../../src/mulberry";
 
 // @ts-ignore
 import Menu from "lucide-solid/icons/menu";

@@ -52,7 +52,7 @@ import {
   NavbarStyled,
   RightDrawerStyled,
   SidebarStyled,
-} from "@ryangreenup/panda-daisy-components";
+} from "../../src/mulberry";
 import { css } from "../../styled-system/css";
 
 const LayoutComponent = () => (
